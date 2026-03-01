@@ -20,10 +20,13 @@ links = "harfbuzz"
 maintainence = { status = "passively-maintained" }
 
 [features]
-default = ["build-native-harfbuzz"]
+default = ["freetype"]
+freetype = ["freetype-sys", "freetype-rs"]
 build-native-harfbuzz = []
 
 [dependencies]
+freetype-sys = { version = "0.23.0", optional = true }
+freetype-rs = { version = "*", optional = true }
 rusttype = { version = "0.9", optional = true }
 bitflags = "^1"
 
